@@ -29,7 +29,7 @@ export function Navbar() {
       <nav className="navbar container mx-auto min-h-16">
         <div className="navbar-start">
           <Link
-            className="btn btn-ghost px-0 text-xl font-semibold tracking-tight hover:bg-transparent"
+            className="btn btn-ghost px-0 text-xl font-semibold tracking-normal hover:bg-transparent"
             to={isAuthenticated ? "/app" : "/"}
           >
             {appName}

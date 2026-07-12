@@ -2,6 +2,7 @@ import { clientEnv } from "@repo/config/env/web-client";
 
 const POSTHOG_ASSET_ORIGIN = "https://us-assets.i.posthog.com";
 const POSTHOG_INGEST_ORIGIN = "https://us.i.posthog.com";
+const LUDIC_FONT_ORIGIN = "https://font.ldcr.us";
 
 export function applySecurityHeaders(
   response: Response,
@@ -75,13 +76,13 @@ function contentSecurityPolicy(): string {
     "default-src 'self'",
     "base-uri 'self'",
     `connect-src ${connectSources.join(" ")}`,
-    "font-src 'self' data:",
+    `font-src 'self' data: ${LUDIC_FONT_ORIGIN}`,
     "form-action 'self'",
     "frame-ancestors 'none'",
     `img-src ${imageSources.join(" ")}`,
     "object-src 'none'",
     `script-src ${scriptSources.join(" ")}`,
-    "style-src 'self' 'unsafe-inline'",
+    `style-src 'self' 'unsafe-inline' ${LUDIC_FONT_ORIGIN}`,
     "worker-src 'self' blob:",
   ].join("; ");
 }

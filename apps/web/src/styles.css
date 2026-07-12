@@ -1,5 +1,6 @@
 @import "tailwindcss";
-@import "@fontsource-variable/geist";
+
+@source "../node_modules/@formadapter/daisyui/dist";
 
 @plugin "daisyui" {
   themes: light --default;
@@ -10,7 +11,7 @@
 }
 
 @utility heading {
-  @apply text-balance font-semibold tracking-tight text-base-content;
+  @apply text-balance font-semibold tracking-normal text-base-content;
 }
 
 @utility muted {
@@ -18,15 +19,30 @@
 }
 
 @theme inline {
-  --font-sans: "Geist Variable", sans-serif;
+  --font-sans: var(--font-ludic, ui-sans-serif, system-ui, sans-serif);
+  --font-mono: var(
+    --font-ludic-mono,
+    ui-monospace,
+    "SFMono-Regular",
+    Menlo,
+    Monaco,
+    Consolas,
+    "Liberation Mono",
+    monospace
+  );
 }
 
 @layer base {
   html {
     @apply font-sans antialiased;
     color-scheme: light;
+    font-optical-sizing: auto;
     overscroll-behavior: none;
     scrollbar-gutter: stable;
     text-rendering: optimizeLegibility;
+  }
+
+  :where(code, kbd, pre, samp) {
+    @apply font-mono;
   }
 }

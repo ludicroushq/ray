@@ -25,10 +25,16 @@ describe(applySecurityHeaders, () => {
     const contentSecurityPolicy = response.headers.get(
       "Content-Security-Policy"
     );
-    expect(contentSecurityPolicy).toContain("frame-ancestors 'none'");
-    expect(contentSecurityPolicy).toContain(
-      "img-src 'self' data: blob: https://workoscdn.com https://example.convex.cloud"
-    );
+    const expectedDirectives = [
+      "frame-ancestors 'none'",
+      "font-src 'self' data: https://font.ldcr.us",
+      "img-src 'self' data: blob: https://workoscdn.com https://example.convex.cloud",
+      "style-src 'self' 'unsafe-inline' https://font.ldcr.us",
+    ];
+
+    for (const directive of expectedDirectives) {
+      expect(contentSecurityPolicy).toContain(directive);
+    }
     expect(response.headers.get("Strict-Transport-Security")).toBe(
       "max-age=31536000; includeSubDomains"
     );

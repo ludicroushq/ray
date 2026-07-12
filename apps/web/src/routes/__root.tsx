@@ -1,4 +1,5 @@
 import type { ConvexQueryClient } from "@convex-dev/react-query";
+import { DaisyUIProvider } from "@formadapter/daisyui";
 import { appName } from "@repo/config/app";
 import { TanStackDevtools } from "@tanstack/react-devtools";
 import type { QueryClient } from "@tanstack/react-query";
@@ -63,6 +64,22 @@ export const Route = createRootRouteWithContext<{
   head: () => ({
     links: [
       {
+        crossOrigin: "anonymous",
+        href: "https://font.ldcr.us",
+        rel: "preconnect",
+      },
+      {
+        as: "font",
+        crossOrigin: "anonymous",
+        href: "https://font.ldcr.us/v/0.0.1/fonts/LudicSans-LatinCore.woff2",
+        rel: "preload",
+        type: "font/woff2",
+      },
+      {
+        href: "https://font.ldcr.us/ludic.css",
+        rel: "stylesheet",
+      },
+      {
         href: appCss,
         rel: "stylesheet",
       },
@@ -97,7 +114,9 @@ function RootDocument(props: RootDocumentProps) {
         <HeadContent />
       </head>
       <body className="flex h-full flex-col antialiased">
-        <PostHogAppProvider>{children}</PostHogAppProvider>
+        <DaisyUIProvider>
+          <PostHogAppProvider>{children}</PostHogAppProvider>
+        </DaisyUIProvider>
         <TanStackDevtools
           config={{
             position: "bottom-right",
