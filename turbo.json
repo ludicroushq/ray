@@ -1,0 +1,112 @@
+{
+  "$schema": "https://turborepo.dev/schema.json",
+  "tasks": {
+    "//#convex:dev": {
+      "cache": false,
+      "passThroughEnv": [
+        "CONVEX_DEPLOYMENT",
+        "POSTHOG_API_KEY",
+        "WORKOS_CLIENT_ID"
+      ],
+      "persistent": true
+    },
+    "//#test:lint": {
+      "cache": false
+    },
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": [".output/**", "dist/**"]
+    },
+    "check-types": {
+      "dependsOn": ["transit"]
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "preview": {
+      "cache": false,
+      "dependsOn": ["build"],
+      "persistent": true
+    },
+    "start": {
+      "cache": false,
+      "dependsOn": ["build"],
+      "persistent": true
+    },
+    "test": {
+      "dependsOn": ["transit"]
+    },
+    "test:watch": {
+      "cache": false,
+      "persistent": true
+    },
+    "transit": {
+      "dependsOn": ["^transit"]
+    },
+    "web#build": {
+      "dependsOn": ["^build"],
+      "env": [
+        "NODE_ENV",
+        "NITRO_PRESET",
+        "POSTHOG_PERSONAL_API_KEY",
+        "POSTHOG_PROJECT_ID",
+        "VERCEL",
+        "VITE_CONVEX_URL",
+        "VITE_POSTHOG_KEY",
+        "VITE_WORKOS_REDIRECT_URI"
+      ],
+      "inputs": ["$TURBO_DEFAULT$", "$TURBO_ROOT$/.env*"],
+      "outputs": [".output/**", "dist/**"]
+    },
+    "web#dev": {
+      "cache": false,
+      "passThroughEnv": [
+        "POSTHOG_API_KEY",
+        "VITE_CONVEX_URL",
+        "VITE_POSTHOG_KEY",
+        "VITE_WORKOS_REDIRECT_URI",
+        "WORKOS_API_KEY",
+        "WORKOS_CLIENT_ID",
+        "WORKOS_COOKIE_PASSWORD"
+      ],
+      "persistent": true
+    },
+    "web#preview": {
+      "cache": false,
+      "dependsOn": ["build"],
+      "passThroughEnv": [
+        "POSTHOG_API_KEY",
+        "VITE_CONVEX_URL",
+        "VITE_POSTHOG_KEY",
+        "VITE_WORKOS_REDIRECT_URI",
+        "WORKOS_API_KEY",
+        "WORKOS_CLIENT_ID",
+        "WORKOS_COOKIE_PASSWORD"
+      ],
+      "persistent": true
+    },
+    "web#start": {
+      "cache": false,
+      "dependsOn": ["build"],
+      "passThroughEnv": [
+        "HOST",
+        "NITRO_HOST",
+        "NITRO_PORT",
+        "NITRO_SSL_CERT",
+        "NITRO_SSL_KEY",
+        "NODE_ENV",
+        "POSTHOG_API_KEY",
+        "PORT",
+        "SERVER_SHUTDOWN_TIMEOUT",
+        "VITE_CONVEX_URL",
+        "VITE_POSTHOG_KEY",
+        "VITE_WORKOS_REDIRECT_URI",
+        "WORKOS_API_KEY",
+        "WORKOS_CLIENT_ID",
+        "WORKOS_COOKIE_PASSWORD"
+      ],
+      "persistent": true
+    }
+  }
+}

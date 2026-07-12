@@ -1,0 +1,32 @@
+@import "tailwindcss";
+@import "@fontsource-variable/geist";
+
+@plugin "daisyui" {
+  themes: light --default;
+}
+
+@utility container {
+  @apply px-8;
+}
+
+@utility heading {
+  @apply text-balance font-semibold tracking-tight text-base-content;
+}
+
+@utility muted {
+  @apply text-pretty text-base-content/60;
+}
+
+@theme inline {
+  --font-sans: "Geist Variable", sans-serif;
+}
+
+@layer base {
+  html {
+    @apply font-sans antialiased;
+    color-scheme: light;
+    overscroll-behavior: none;
+    scrollbar-gutter: stable;
+    text-rendering: optimizeLegibility;
+  }
+}
