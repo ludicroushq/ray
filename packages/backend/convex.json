@@ -1,6 +1,5 @@
 {
   "$schema": "node_modules/convex/schemas/convex.schema.json",
-  "functions": "packages/backend/convex",
   "authKit": {
     "dev": {
       "configure": {
@@ -16,6 +15,6 @@
     }
   },
   "aiFiles": {
-    "enabled": true
+    "enabled": false
   }
 }

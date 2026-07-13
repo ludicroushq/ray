@@ -8,6 +8,7 @@
   "type": "module",
   "scripts": {
     "build": "turbo run build --env-mode=loose",
+    "convex": "bun --cwd packages/backend convex",
     "dev": "turbo run dev --env-mode=loose",
     "prepare": "lefthook install",
     "preview": "turbo run preview --env-mode=loose",
@@ -15,7 +16,6 @@
     "test": "ultracite check && turbo run typecheck test"
   },
   "devDependencies": {
-    "convex": "^1.42.1",
     "eslint": "^9.39.4",
     "eslint-plugin-github": "^6.1.1",
     "eslint-plugin-sonarjs": "^4.1.0",
