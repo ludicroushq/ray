@@ -4,16 +4,17 @@
   "type": "module",
   "exports": {
     "./app": "./src/app.ts",
-    "./env/web-build": "./src/env/web-build.ts",
-    "./env/web-client": "./src/env/web-client.ts",
-    "./env/web-server": "./src/env/web-server.ts"
+    "./env/client": "./src/env/client.ts",
+    "./env/convex": "./src/env/convex.ts",
+    "./env/server": "./src/env/server.ts"
   },
   "scripts": {
-    "check-types": "tsc --noEmit"
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@t3-oss/env-core": "^0.13.11",
-    "zod": "^4.3.6"
+    "convex": "^1.42.1",
+    "zod": "^4.4.3"
   },
   "devDependencies": {
     "@repo/typescript-config": "workspace:*",

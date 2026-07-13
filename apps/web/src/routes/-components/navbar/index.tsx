@@ -1,6 +1,6 @@
 import { usePostHog } from "@posthog/react";
 import { appName } from "@repo/config/app";
-import { clientEnv } from "@repo/config/env/web-client";
+import { clientEnv } from "@repo/config/env/client";
 import { Link } from "@tanstack/react-router";
 import { useAuth } from "@workos/authkit-tanstack-react-start/client";
 import { MenuIcon } from "lucide-react";
@@ -13,8 +13,8 @@ type MenuItemProps = {
 };
 
 export function Navbar() {
-  const posthog = usePostHog();
   const { signOut, user } = useAuth();
+  const posthog = usePostHog();
   const isAuthenticated = Boolean(user);
   const handleSignOut = () => {
     if (clientEnv.VITE_POSTHOG_KEY) {

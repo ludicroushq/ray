@@ -1,4 +1,3 @@
-import { clientEnv } from "@repo/config/env/web-client";
 import { isNotFound, isRedirect } from "@tanstack/react-router";
 import {
   createCsrfMiddleware,
@@ -47,25 +46,11 @@ const exceptionMiddleware = createMiddleware().server(
   }
 );
 
-const configureAuthKitMiddleware = createMiddleware().server(
-  async ({ next }) => {
-    const { configure } = await import("@workos/authkit-session");
-    configure({
-      redirectUri: clientEnv.VITE_WORKOS_REDIRECT_URI,
-    });
-
-    return next();
-  }
-);
-
 export const startInstance = createStart(() => ({
   requestMiddleware: [
     securityHeadersMiddleware,
     csrfMiddleware,
     exceptionMiddleware,
-    configureAuthKitMiddleware,
-    authkitMiddleware({
-      redirectUri: clientEnv.VITE_WORKOS_REDIRECT_URI,
-    }),
+    authkitMiddleware(),
   ],
 }));

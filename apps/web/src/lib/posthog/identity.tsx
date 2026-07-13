@@ -1,5 +1,5 @@
 import { usePostHog } from "@posthog/react";
-import { clientEnv } from "@repo/config/env/web-client";
+import { clientEnv } from "@repo/config/env/client";
 import { useAuth } from "@workos/authkit-tanstack-react-start/client";
 import { use, useEffect } from "react";
 

@@ -4,12 +4,11 @@
   "type": "module",
   "scripts": {
     "build": "vite build",
-    "check-types": "tsc --noEmit",
+    "typecheck": "tsc --noEmit",
     "dev": "portless TODO vite dev",
     "preview": "vite preview",
     "start": "node .output/server/index.mjs",
-    "test": "vitest run",
-    "test:watch": "vitest"
+    "test": "vitest run"
   },
   "dependencies": {
     "@convex-dev/react-query": "^0.1.0",
@@ -23,7 +22,6 @@
     "@tanstack/react-router-ssr-query": "^1.167.1",
     "@tanstack/react-start": "^1.168.27",
     "@workos-inc/node": "^10.7.0",
-    "@workos/authkit-session": "^0.7.1",
     "@workos/authkit-tanstack-react-start": "^0.11.0",
     "convex": "^1.42.1",
     "convex-route-query": "^0.1.0",

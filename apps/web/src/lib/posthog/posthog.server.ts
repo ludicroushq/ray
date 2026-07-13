@@ -1,17 +1,17 @@
-import { getServerEnv } from "@repo/config/env/web-server";
+import { serverEnv } from "@repo/config/env/server";
 import { PostHog } from "posthog-node";
 
 export async function captureServerException(
   error: unknown,
   properties: Record<string, unknown>
 ) {
-  const { POSTHOG_API_KEY } = getServerEnv();
+  const postHogApiKey = serverEnv.POSTHOG_API_KEY ?? "";
 
-  if (!POSTHOG_API_KEY) {
+  if (!postHogApiKey) {
     return;
   }
 
-  const posthog = new PostHog(POSTHOG_API_KEY, {
+  const posthog = new PostHog(postHogApiKey, {
     flushAt: 1,
     flushInterval: 0,
   });

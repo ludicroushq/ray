@@ -1,12 +1,12 @@
 import { createEnv } from "@t3-oss/env-core";
+import { httpUrl, string } from "zod";
 
-import { OPTIONAL_STRING, REQUIRED_URL } from "./schemas";
+const optionalString = string().trim().min(1).optional();
 
 export const clientEnv = createEnv({
   client: {
-    VITE_CONVEX_URL: REQUIRED_URL,
-    VITE_POSTHOG_KEY: OPTIONAL_STRING,
-    VITE_WORKOS_REDIRECT_URI: REQUIRED_URL,
+    VITE_CONVEX_URL: httpUrl(),
+    VITE_POSTHOG_KEY: optionalString,
   },
   clientPrefix: "VITE_",
   emptyStringAsUndefined: true,

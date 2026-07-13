@@ -7,20 +7,12 @@
   ],
   "type": "module",
   "scripts": {
-    "build": "turbo run build",
-    "check": "turbo run test:lint check-types test",
-    "check-types": "turbo run check-types",
-    "ci": "turbo run test:lint check-types test build",
-    "convex:codegen": "convex codegen",
-    "convex:dev": "convex dev",
-    "dev": "turbo run dev convex:dev",
-    "lint": "ultracite fix",
+    "build": "turbo run build --env-mode=loose",
+    "dev": "turbo run dev --env-mode=loose",
     "prepare": "lefthook install",
-    "preview": "turbo run preview",
-    "start": "turbo run start",
-    "test": "turbo run test",
-    "test:lint": "ultracite check",
-    "test:watch": "turbo run test:watch"
+    "preview": "turbo run preview --env-mode=loose",
+    "start": "turbo run start --env-mode=loose",
+    "test": "ultracite check && turbo run typecheck test"
   },
   "devDependencies": {
     "convex": "^1.42.1",
@@ -33,8 +25,7 @@
     "oxlint-plugin-react-doctor": "^0.7.4",
     "turbo": "^2.10.4",
     "typescript": "^5.9.3",
-    "ultracite": "7.9.3",
-    "vite": "^8.1.4"
+    "ultracite": "7.9.3"
   },
   "engines": {
     "node": ">=24.0.0"

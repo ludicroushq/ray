@@ -1,11 +1,11 @@
-import { clientEnv } from "@repo/config/env/web-client";
+import { serverEnv } from "@repo/config/env/server";
 import { createFileRoute } from "@tanstack/react-router";
 import { handleCallbackRoute } from "@workos/authkit-tanstack-react-start";
 
 import { captureServerException } from "@/lib/posthog/posthog.server";
 
 const AUTH_CALLBACK_ROUTE = "/api/auth/callback";
-const authCallbackOrigin = new URL(clientEnv.VITE_WORKOS_REDIRECT_URI).origin;
+const authCallbackOrigin = new URL(serverEnv.WORKOS_REDIRECT_URI).origin;
 
 const handleAuthCallback = handleCallbackRoute({
   onError: handleAuthCallbackError,

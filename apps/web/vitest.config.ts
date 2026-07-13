@@ -7,6 +7,9 @@ export default defineConfig({
     tsconfigPaths: true,
   },
   test: {
+    env: {
+      VITE_CONVEX_URL: "https://example.convex.cloud",
+    },
     environment: "jsdom",
     setupFiles: ["./src/test/setup.ts"],
   },

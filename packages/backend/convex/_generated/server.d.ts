@@ -25,6 +25,7 @@ import type { DataModel } from "./dataModel.js";
  * Typesafe environment variables declared in `convex.config.ts`.
  */
 type Env = {
+  readonly POSTHOG_API_KEY: string | undefined;
   readonly WORKOS_CLIENT_ID: string;
 };
 

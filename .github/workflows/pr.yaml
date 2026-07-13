@@ -10,12 +10,9 @@ concurrency:
 
 jobs:
   test:
-    env:
-      VITE_CONVEX_URL: https://example.convex.cloud
-      VITE_WORKOS_REDIRECT_URI: https://example.com/api/auth/callback
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
       - uses: ./.github/actions/setup
 
-      - run: bun run ci
+      - run: bun run test

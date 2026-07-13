@@ -2,10 +2,9 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 
 import { applySecurityHeaders } from "../headers";
 
-vi.mock(import("@repo/config/env/web-client"), () => ({
+vi.mock(import("@repo/config/env/client"), () => ({
   clientEnv: {
     VITE_CONVEX_URL: "https://example.convex.cloud",
-    VITE_WORKOS_REDIRECT_URI: "https://example.com/api/auth/callback",
   },
 }));
 

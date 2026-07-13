@@ -1,4 +1,4 @@
-import { clientEnv } from "@repo/config/env/web-client";
+import { clientEnv } from "@repo/config/env/client";
 
 const POSTHOG_ASSET_ORIGIN = "https://us-assets.i.posthog.com";
 const POSTHOG_INGEST_ORIGIN = "https://us.i.posthog.com";

@@ -1,6 +1,6 @@
 import { PostHogProvider } from "@posthog/react";
 import { appName, isProduction } from "@repo/config/app";
-import { clientEnv } from "@repo/config/env/web-client";
+import { clientEnv } from "@repo/config/env/client";
 import type { PostHogConfig } from "posthog-js";
 import { useState } from "react";
 
@@ -23,13 +23,15 @@ const postHogOptions = {
   },
 } satisfies Partial<PostHogConfig>;
 
+const postHogApiKey = clientEnv.VITE_POSTHOG_KEY ?? "";
+
 export function PostHogAppProvider(
   props: PostHogAppProviderProps
 ): React.ReactNode {
   const { children } = props;
   const [isReady, setIsReady] = useState(false);
 
-  if (!clientEnv.VITE_POSTHOG_KEY) {
+  if (!postHogApiKey) {
     return children;
   }
 
@@ -39,7 +41,7 @@ export function PostHogAppProvider(
   } satisfies Partial<PostHogConfig>;
 
   return (
-    <PostHogProvider apiKey={clientEnv.VITE_POSTHOG_KEY} options={options}>
+    <PostHogProvider apiKey={postHogApiKey} options={options}>
       <PostHogReadyContext.Provider value={isReady}>
         {children}
       </PostHogReadyContext.Provider>

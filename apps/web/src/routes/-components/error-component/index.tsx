@@ -1,5 +1,5 @@
 import { usePostHog } from "@posthog/react";
-import { clientEnv } from "@repo/config/env/web-client";
+import { clientEnv } from "@repo/config/env/client";
 import type { ErrorComponentProps } from "@tanstack/react-router";
 import { useRouter } from "@tanstack/react-router";
 import { use, useEffect, useRef } from "react";

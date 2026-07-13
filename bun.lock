@@ -16,7 +16,6 @@
         "turbo": "^2.10.4",
         "typescript": "^5.9.3",
         "ultracite": "7.9.3",
-        "vite": "^8.1.4",
       },
     },
     "apps/web": {
@@ -33,7 +32,6 @@
         "@tanstack/react-router-ssr-query": "^1.167.1",
         "@tanstack/react-start": "^1.168.27",
         "@workos-inc/node": "^10.7.0",
-        "@workos/authkit-session": "^0.7.1",
         "@workos/authkit-tanstack-react-start": "^0.11.0",
         "convex": "^1.42.1",
         "convex-route-query": "^0.1.0",
@@ -76,6 +74,7 @@
         "@convex-dev/workflow": "^0.4.4",
         "@convex-dev/workpool": "^0.4.7",
         "@posthog/convex": "^0.2.33",
+        "@repo/config": "workspace:*",
         "convex": "^1.42.1",
         "convex-helpers": "^0.1.120",
         "fluent-convex": "^0.13.0",
@@ -94,7 +93,8 @@
       "name": "@repo/config",
       "dependencies": {
         "@t3-oss/env-core": "^0.13.11",
-        "zod": "^4.3.6",
+        "convex": "^1.42.1",
+        "zod": "^4.4.3",
       },
       "devDependencies": {
         "@repo/typescript-config": "workspace:*",
