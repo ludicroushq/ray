@@ -4,6 +4,9 @@
   "workspaces": {
     "": {
       "name": "TODO",
+      "dependencies": {
+        "convex-route-query": "^0.1.1",
+      },
       "devDependencies": {
         "eslint": "^9.39.4",
         "eslint-plugin-github": "^6.1.1",
@@ -814,7 +817,7 @@
 
     "convex-helpers": ["convex-helpers@0.1.120", "", { "peerDependencies": { "@standard-schema/spec": "^1.0.0", "convex": "^1.32.0", "hono": "^4.0.5", "react": "^17.0.2 || ^18.0.0 || ^19.0.0", "typescript": "^5.5 || ^6.0.0", "zod": "^3.25.0 || ^4.0.0" }, "optionalPeers": ["@standard-schema/spec", "hono", "react", "typescript", "zod"], "bin": { "convex-helpers": "bin.cjs" } }, "sha512-FPqtmN/10uoxmmhVq0ViNi08AnmHKT/eU1R8+ohmPZoHfg8noZEZCltApY/ASDdhq92o0kLZETggzBvMfHJDLQ=="],
 
-    "convex-route-query": ["convex-route-query@0.1.0", "", { "peerDependencies": { "@convex-dev/react-query": ">=0.1.0", "@tanstack/react-query": ">=5.0.0", "convex": ">=1.0.0", "react": ">=18.0.0" } }, "sha512-D7T9UkSg3DYsZpw+DFseJyMB0Unx/t9GRAhXO4gnkKRd5uerg3itouh6oFl9c5NocxO4zt4LSqxL89asUZXTlg=="],
+    "convex-route-query": ["convex-route-query@0.1.1", "", { "peerDependencies": { "@convex-dev/react-query": ">=0.1.0", "@tanstack/react-query": ">=5.0.0", "convex": ">=1.0.0", "react": ">=18.0.0" } }, "sha512-8ajs2UmcJdQFvNpThLB5XIdmtmV3CxTOiQcsC0ccv/7cINzkV03KxplKAnRLEqCOSe2zWlak5zyg1iYEYEs0yg=="],
 
     "convex-test": ["convex-test@0.0.54", "", { "peerDependencies": { "convex": "^1.32.0" } }, "sha512-C0v2SQcuxrELAJRNzE6fQ686XDPor7UFoC22jcoJXeCRqhLo8ZIMZ4jyUHoo1UdAL2enCb0AbiprCVpLDN8u9Q=="],
 
@@ -1639,6 +1642,8 @@
     "pretty-format/ansi-styles": ["ansi-styles@5.2.0", "", {}, "sha512-Cxwpt2SfTzTtXcfOlzGEee8O+c+MmUgGrNiBcXnuWxuFJHe6a5Hz7qwhwe5OgaSYI0IJvkLqWX1ASG+cJOkEiA=="],
 
     "rolldown/@oxc-project/types": ["@oxc-project/types@0.139.0", "", {}, "sha512-r9gHphtCs+1M7J0pw6Sn/hh/Wpa/iQrOOkrNAlVLF/gHq+/CJmHIWKKUUhdWjcD6CIa8idarspCsASiXCXvFUw=="],
+
+    "web/convex-route-query": ["convex-route-query@0.1.0", "", { "peerDependencies": { "@convex-dev/react-query": ">=0.1.0", "@tanstack/react-query": ">=5.0.0", "convex": ">=1.0.0", "react": ">=18.0.0" } }, "sha512-D7T9UkSg3DYsZpw+DFseJyMB0Unx/t9GRAhXO4gnkKRd5uerg3itouh6oFl9c5NocxO4zt4LSqxL89asUZXTlg=="],
 
     "@rolldown/binding-wasm32-wasi/@emnapi/core/@emnapi/wasi-threads": ["@emnapi/wasi-threads@1.2.2", "", { "dependencies": { "tslib": "^2.4.0" } }, "sha512-c95qOXkHdydNKhscBTebqEC1CVAZpyqOfVfBzQ1qgzyl3gfeldUjIggDbIZgDKsHLgnsM+igH7TJ/eAasaVuMA=="],
 
