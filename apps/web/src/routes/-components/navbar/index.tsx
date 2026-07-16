@@ -1,5 +1,5 @@
 import { usePostHog } from "@posthog/react";
-import { appName } from "@repo/config/app";
+import { appName, appUrl } from "@repo/config/app";
 import { clientEnv } from "@repo/config/env/client";
 import { Link } from "@tanstack/react-router";
 import { useAuth } from "@workos/authkit-tanstack-react-start/client";
@@ -21,7 +21,7 @@ export function Navbar() {
       posthog.reset();
     }
 
-    void signOut({ returnTo: "/" });
+    void signOut({ returnTo: appUrl });
   };
 
   return (
