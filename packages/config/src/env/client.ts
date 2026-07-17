@@ -5,6 +5,7 @@ const optionalString = string().trim().min(1).optional();
 
 export const clientEnv = createEnv({
   client: {
+    VITE_CONVEX_SITE_URL: httpUrl(),
     VITE_CONVEX_URL: httpUrl(),
     VITE_POSTHOG_KEY: optionalString,
   },

@@ -4,6 +4,7 @@ import { applySecurityHeaders } from "../headers";
 
 vi.mock(import("@repo/config/env/client"), () => ({
   clientEnv: {
+    VITE_CONVEX_SITE_URL: "https://example.convex.site",
     VITE_CONVEX_URL: "https://example.convex.cloud",
   },
 }));

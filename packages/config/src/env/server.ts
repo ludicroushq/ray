@@ -8,6 +8,7 @@ export const serverEnv = createEnv({
   emptyStringAsUndefined: true,
   runtimeEnv: process.env,
   server: {
+    CONVEX_DEPLOYMENT: requiredString,
     POSTHOG_API_KEY: optionalString,
     WORKOS_API_KEY: requiredString,
     WORKOS_CLIENT_ID: requiredString,
