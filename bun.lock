@@ -36,7 +36,7 @@
         "@workos-inc/node": "^10.7.0",
         "@workos/authkit-tanstack-react-start": "^0.11.0",
         "convex": "^1.42.1",
-        "convex-route-query": "^0.1.0",
+        "convex-route-query": "^0.1.1",
         "lucide-react": "^1.24.0",
         "posthog-js": "^1.399.2",
         "posthog-node": "^5.41.0",
@@ -1642,8 +1642,6 @@
     "pretty-format/ansi-styles": ["ansi-styles@5.2.0", "", {}, "sha512-Cxwpt2SfTzTtXcfOlzGEee8O+c+MmUgGrNiBcXnuWxuFJHe6a5Hz7qwhwe5OgaSYI0IJvkLqWX1ASG+cJOkEiA=="],
 
     "rolldown/@oxc-project/types": ["@oxc-project/types@0.139.0", "", {}, "sha512-r9gHphtCs+1M7J0pw6Sn/hh/Wpa/iQrOOkrNAlVLF/gHq+/CJmHIWKKUUhdWjcD6CIa8idarspCsASiXCXvFUw=="],
-
-    "web/convex-route-query": ["convex-route-query@0.1.0", "", { "peerDependencies": { "@convex-dev/react-query": ">=0.1.0", "@tanstack/react-query": ">=5.0.0", "convex": ">=1.0.0", "react": ">=18.0.0" } }, "sha512-D7T9UkSg3DYsZpw+DFseJyMB0Unx/t9GRAhXO4gnkKRd5uerg3itouh6oFl9c5NocxO4zt4LSqxL89asUZXTlg=="],
 
     "@rolldown/binding-wasm32-wasi/@emnapi/core/@emnapi/wasi-threads": ["@emnapi/wasi-threads@1.2.2", "", { "dependencies": { "tslib": "^2.4.0" } }, "sha512-c95qOXkHdydNKhscBTebqEC1CVAZpyqOfVfBzQ1qgzyl3gfeldUjIggDbIZgDKsHLgnsM+igH7TJ/eAasaVuMA=="],
 
