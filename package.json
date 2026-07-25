@@ -11,13 +11,14 @@
     "convex": "bun --cwd packages/backend convex",
     "dev": "turbo run dev --env-mode=loose",
     "preview": "turbo run preview --env-mode=loose",
+    "ruler": "ruler apply",
+    "skills": "cd .ruler/skills && skills",
+    "skills:update": "bun run skills update --project --yes && bun run ruler",
     "start": "turbo run start --env-mode=loose",
     "test": "ultracite check && turbo run typecheck test"
   },
-  "dependencies": {
-    "convex-route-query": "^0.1.1"
-  },
   "devDependencies": {
+    "@intellectronica/ruler": "^0.3.44",
     "eslint": "^9.39.4",
     "eslint-plugin-github": "^6.1.1",
     "eslint-plugin-sonarjs": "^4.1.0",
@@ -25,6 +26,7 @@
     "oxfmt": "^0.58.0",
     "oxlint": "^1.73.0",
     "oxlint-plugin-react-doctor": "^0.7.4",
+    "skills": "^1.5.20",
     "turbo": "^2.10.4",
     "typescript": "^5.9.3",
     "ultracite": "7.9.3"

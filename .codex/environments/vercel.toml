@@ -7,5 +7,6 @@ script = '''
 mise trust
 mise install
 bun install
+bun ruler
 vercel link --yes
 '''
