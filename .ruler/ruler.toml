@@ -1,0 +1,13 @@
+default_agents = ["claude", "codex"]
+
+[mcp]
+enabled = false
+
+[skills]
+enabled = true
+
+[gitignore]
+enabled = true
+
+[backup]
+enabled = false
