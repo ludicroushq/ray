@@ -7,7 +7,13 @@ import vitest from "ultracite/oxlint/vitest";
 
 export default defineConfig({
   extends: [core, jsPlugins, tanstack, vitest, react],
-  ignorePatterns: [...(core.ignorePatterns ?? []), "**/.agents/skills/**"],
+  ignorePatterns: [
+    ...(core.ignorePatterns ?? []),
+    "**/.agents/skills/**",
+    "**/.claude/skills/**",
+    "**/.cursor/skills/**",
+    "**/.ruler/skills/**",
+  ],
   overrides: [
     {
       files: ["apps/web/src/routes/**/*.{ts,tsx}"],

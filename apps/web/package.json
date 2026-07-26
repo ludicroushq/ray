@@ -24,7 +24,7 @@
     "@workos-inc/node": "^10.7.0",
     "@workos/authkit-tanstack-react-start": "^0.11.0",
     "convex": "^1.42.1",
-    "convex-route-query": "^0.1.0",
+    "convex-route-query": "^0.1.1",
     "lucide-react": "^1.24.0",
     "posthog-js": "^1.399.2",
     "posthog-node": "^5.41.0",
