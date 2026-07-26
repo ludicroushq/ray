@@ -7,6 +7,7 @@ export default defineConfig({
     ...(ultracite.ignorePatterns ?? []),
     "**/.agents/skills/**",
     "**/.claude/skills/**",
+    "**/.cursor/skills/**",
     "**/.ruler/skills/**",
   ],
 });

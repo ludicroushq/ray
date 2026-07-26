@@ -11,6 +11,7 @@ export default defineConfig({
     ...(core.ignorePatterns ?? []),
     "**/.agents/skills/**",
     "**/.claude/skills/**",
+    "**/.cursor/skills/**",
     "**/.ruler/skills/**",
   ],
   overrides: [
