@@ -1,4 +1,4 @@
-default_agents = ["claude", "codex"]
+default_agents = ["claude", "codex", "cursor"]
 
 [mcp]
 enabled = false
