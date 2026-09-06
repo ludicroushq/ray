@@ -9,15 +9,19 @@
   "scripts": {
     "build": "turbo run build --env-mode=loose",
     "convex": "bun --cwd packages/backend convex",
+    "confect:codegen": "bun run --cwd packages/backend confect:codegen",
+    "confect:drift": "bun scripts/confect-drift.ts",
     "dev": "turbo run dev --env-mode=loose",
+    "effect:diagnostics": "bun scripts/effect-diagnostics.ts",
     "preview": "turbo run preview --env-mode=loose",
     "ruler": "ruler apply",
     "skills": "cd .ruler/skills && skills",
     "skills:update": "bun run skills update --project --yes && bun run ruler",
     "start": "turbo run start --env-mode=loose",
-    "test": "ultracite check && turbo run typecheck test"
+    "test": "bun run confect:codegen && bun run effect:diagnostics && ultracite check && turbo run typecheck test"
   },
   "devDependencies": {
+    "@effect/language-service": "0.87.2",
     "@intellectronica/ruler": "^0.3.44",
     "eslint": "^9.39.4",
     "eslint-plugin-github": "^6.1.1",

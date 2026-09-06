@@ -18,6 +18,17 @@
     "skipLibCheck": true,
     "strict": true,
     "strictNullChecks": true,
-    "target": "ES2022"
+    "target": "ES2022",
+    "plugins": [
+      {
+        "name": "@effect/language-service",
+        "diagnosticSeverity": {
+          "effectFnImplicitAny": "error",
+          "floatingEffect": "error",
+          "missingEffectContext": "error",
+          "missingEffectError": "error"
+        }
+      }
+    ]
   }
 }
