@@ -1,8 +1,8 @@
 import { PostHog } from "@posthog/convex";
 import type { Auth } from "convex/server";
 
-import { components } from "./_generated/api";
-import { env } from "./_generated/server";
+import { env } from "../convex/_generated/server";
+import { components } from "./_generated/components";
 
 type IdentifyContext = {
   auth: Auth;
@@ -17,6 +17,7 @@ async function identifyFromConvexAuth(ctx: IdentifyContext) {
   }
 
   return {
+    // Match the WorkOS user ID used by the browser's PostHog identity.
     distinctId: identity.subject,
   };
 }

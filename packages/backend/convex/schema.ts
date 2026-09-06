@@ -1,3 +1,1 @@
-import { defineSchema } from "convex/server";
-
-export default defineSchema({});
+export { default } from "../confect/_generated/convexSchema";

@@ -1,16 +1,23 @@
+import { currentViewer as currentViewerReference } from "@repo/backend/native";
 import { createFileRoute, getRouteApi } from "@tanstack/react-router";
+import { createConvexRouteQuery } from "convex-route-query";
 
 import { LocalFormExample } from "./-components/local-form-example";
 
 const withUserRoute = getRouteApi("/_with-user");
+const currentViewer = createConvexRouteQuery(currentViewerReference);
 
 export const Route = createFileRoute("/_with-user/app/")({
   component: RouteComponent,
+  loader: async (context) => ({
+    ...(await currentViewer.prefetchRoute(context)),
+  }),
 });
 
 function RouteComponent() {
+  const { data: viewer } = currentViewer.useSuspenseRouteQuery(Route);
   const { user } = withUserRoute.useLoaderData();
-  const name = user.firstName ?? user.email;
+  const name = viewer.name ?? viewer.email ?? user.firstName ?? user.email;
 
   return (
     <div className="container mx-auto py-12">

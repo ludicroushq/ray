@@ -3,28 +3,36 @@
   "private": true,
   "type": "module",
   "exports": {
-    "./api": {
-      "types": "./convex/_generated/api.d.ts",
-      "default": "./convex/_generated/api.js"
+    "./refs": {
+      "types": "./confect/_generated/refs.ts",
+      "default": "./confect/_generated/refs.ts"
     },
+    "./native": "./native.ts",
     "./data-model": "./convex/_generated/dataModel.d.ts"
   },
   "scripts": {
-    "dev": "convex dev",
-    "typecheck": "tsc --noEmit -p convex/tsconfig.json",
-    "test": "vitest run"
+    "confect:codegen": "confect codegen",
+    "dev": "bun run confect:codegen && bun run --parallel \"dev:*\"",
+    "dev:confect": "confect dev",
+    "dev:convex": "convex dev",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
   },
   "dependencies": {
+    "@confect/core": "9.4.2",
+    "@confect/server": "9.4.2",
     "@convex-dev/migrations": "^0.3.5",
     "@convex-dev/workflow": "^0.4.4",
     "@convex-dev/workpool": "^0.4.7",
+    "@effect/platform": "0.97.1",
     "@posthog/convex": "^0.2.33",
     "@repo/config": "workspace:*",
     "convex": "^1.42.1",
-    "convex-helpers": "^0.1.120",
-    "fluent-convex": "^0.13.0"
+    "effect": "3.22.1"
   },
   "devDependencies": {
+    "@confect/cli": "9.4.2",
+    "@confect/test": "9.4.2",
     "@edge-runtime/vm": "^5.0.0",
     "@repo/typescript-config": "workspace:*",
     "@types/node": "^24.0.0",
